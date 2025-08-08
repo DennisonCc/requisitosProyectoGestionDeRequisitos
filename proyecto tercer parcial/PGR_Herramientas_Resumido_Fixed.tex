@@ -1,0 +1,576 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+
+% Configuración de página
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{headercolor}{\textbf{PGR - TutoESPEcialistas}}}
+\fancyhead[R]{\textcolor{headercolor}{\textbf{Grupo 4}}}
+\fancyfoot[C]{\textcolor{gray}{\thepage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{headercolor}\leaders\hrule height \headrulewidth\hfill}}
+
+% Configuración de títulos
+\titleformat{\section}{\Large\bfseries\color{headercolor}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{darkblue}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{darkblue}}{\thesubsubsection}{1em}{}
+
+% Colores personalizados
+\definecolor{headercolor}{RGB}{51, 102, 153}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+\definecolor{darkblue}{RGB}{25, 51, 102}
+\definecolor{lightblue}{RGB}{173, 216, 230}
+\definecolor{successgreen}{RGB}{40, 167, 69}
+\definecolor{warningorange}{RGB}{255, 193, 7}
+\definecolor{dangerred}{RGB}{220, 53, 69}
+
+% Configuración de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=headercolor,
+    citecolor=darkblue
+}
+
+% Configuración de listas
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+\title{
+    \vspace{-1cm}
+    \begin{tcolorbox}[colback=lightblue!20, colframe=headercolor, rounded corners, boxrule=2pt]
+        \centering
+        \textbf{\LARGE Plan de Gestión de Requisitos}\\[0.5em]
+        \textbf{\Large Sistema TutoESPEcialistas}\\[0.3em]
+        \textcolor{headercolor}{\large\textbf{Herramientas de Soporte y Visualización}}
+    \end{tcolorbox}
+}
+
+\author{
+    \begin{tcolorbox}[colback=white, colframe=headercolor, rounded corners, boxrule=1pt, width=0.8\textwidth]
+        \centering
+        \textbf{Grupo 4 - NRC: 23284}\\[0.3em]
+        \begin{tabular}{c}
+            \faUser\ Chalacan Dennison \\
+            \faUser\ Sandoval Fernando \\
+            \faUser\ Grijalva Judá
+        \end{tabular}\\[0.3em]
+        \textcolor{gray}{\textbf{Ingeniería en Requisitos}}\\
+        \textcolor{gray}{\small Ing. Carlos Andrés Pillajo Bolagay}
+    \end{tcolorbox}
+}
+
+\date{
+    \begin{tcolorbox}[colback=headercolor!10, colframe=headercolor, rounded corners, boxrule=1pt, width=0.5\textwidth]
+        \centering
+        \faCalendar\ \textbf{Agosto 2025}
+    \end{tcolorbox}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\section{Herramientas de Soporte}
+
+\begin{tcolorbox}[colback=lightblue!10, colframe=headercolor, rounded corners, title=Objetivo]
+Seleccionar una herramienta gratuita y efectiva para gestionar los requisitos del proyecto TutoESPEcialistas, considerando las limitaciones económicas de un proyecto académico. La herramienta debe permitir documentar, rastrear, priorizar y gestionar cambios en los requisitos funcionales y no funcionales del sistema, facilitando la colaboración entre los miembros del equipo y manteniendo la trazabilidad durante todo el ciclo de vida del proyecto.
+\end{tcolorbox}
+
+\subsection{Contexto del Análisis}
+
+\begin{tcolorbox}[colback=white, colframe=darkblue, rounded corners, boxrule=1pt]
+\textbf{Problemática}: Los proyectos académicos enfrentan restricciones presupuestarias que limitan el acceso a herramientas comerciales especializadas. Sin embargo, la gestión efectiva de requisitos es fundamental para el éxito del proyecto TutoESPEcialistas, que maneja 18 requisitos (10 funcionales y 8 no funcionales) con múltiples interdependencias y diferentes niveles de prioridad.
+
+\textbf{Necesidades específicas}:
+\begin{itemize}[itemsep=0.2em]
+    \item Gestión de atributos: ID, versión, autor, fuente, estabilidad, riesgo, prioridad
+    \item Control de cambios y versionado
+    \item Matriz de trazabilidad entre requisitos
+    \item Colaboración efectiva entre 3 miembros del equipo
+    \item Integración con el desarrollo futuro del sistema
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Criterios de Evaluación}
+
+Se priorizaron herramientas completamente gratuitas, estableciendo una metodología de evaluación ponderada:
+
+\begin{itemize}[itemsep=0.3em]
+    \item \textbf{Costo (30\%)}: Prioridad absoluta a herramientas gratuitas
+    \item \textbf{Funcionalidad (25\%)}: Capacidades para gestión de requisitos
+    \item \textbf{Facilidad de Uso (20\%)}: Interfaz intuitiva y curva de aprendizaje
+    \item \textbf{Colaboración (15\%)}: Capacidades de trabajo en equipo
+    \item \textbf{Integración (10\%)}: Compatibilidad con herramientas de desarrollo
+\end{itemize}
+
+\textbf{Metodología}: Cada criterio se evaluó en escala 1-10, aplicando los pesos correspondientes.
+
+\subsection{Comparación de Herramientas}
+
+\begin{table}[H]
+\centering
+\caption{Evaluación Comparativa de Herramientas}
+\small
+\begin{tabular}{|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Criterio} & \textbf{\color{white}GitHub Projects} & \textbf{\color{white}Trello} & \textbf{\color{white}ClickUp} & \textbf{\color{white}Jira} \\
+\hline
+\textbf{Costo} & 10 - Completamente gratuito & 9 - Gratuito con límites menores & 6 - Plan gratuito limitado & 3 - Costoso para estudiantes \\
+\hline
+\textbf{Funcionalidad} & 8 - Gestión completa & 6 - Básico pero efectivo & 9 - Muy completo & 8 - Robusto \\
+\hline
+\textbf{Facilidad de Uso} & 9 - Interfaz familiar & 10 - Muy intuitivo & 6 - Curva de aprendizaje & 5 - Complejo \\
+\hline
+\textbf{Colaboración} & 9 - Excelente para equipos & 8 - Buena colaboración & 8 - Colaboración completa & 9 - Muy buena \\
+\hline
+\textbf{Integración} & 10 - Ecosistema nativo & 7 - Integraciones básicas & 8 - Muchas integraciones & 8 - Buenas integraciones \\
+\hline
+\hline
+\rowcolor{successgreen!30}
+\textbf{Puntuación Final} & \textbf{8.9/10 SELECCIONADA} & 7.5/10 & 7.1/10 & 5.8/10 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Justificación de la Selección: GitHub Projects}
+
+\textbf{GitHub Projects obtiene la mayor puntuación (8.9/10)} por:
+
+\begin{enumerate}
+    \item \textbf{Factor Económico}: Como estudiantes, el costo es crítico. GitHub Projects es 100\% gratuito sin restricciones.
+    \item \textbf{Integración Natural}: Al ser un proyecto de software, la integración con Git, Issues y Pull Requests elimina fricción.
+    \item \textbf{Contexto Académico}: GitHub es familiar en universidades, reduciendo tiempo de aprendizaje.
+    \item \textbf{Escalabilidad}: Sin límites de usuarios o proyectos.
+\end{enumerate}
+
+\textbf{Comparación con alternativas}:
+\begin{itemize}
+    \item \textbf{vs. Trello}: Más funcional que Trello pero mantiene simplicidad
+    \item \textbf{vs. ClickUp}: Plan gratuito de ClickUp muy restrictivo
+    \item \textbf{vs. Jira}: Jira es costoso y complejo para contexto académico
+\end{itemize}
+
+\subsection{Configuración para TutoESPEcialistas}
+
+\subsubsection{Sistema de Etiquetas}
+
+\begin{table}[H]
+\centering
+\caption{Sistema de Labels}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{7cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Categoría} & \textbf{\color{white}Label} & \textbf{\color{white}Uso} \\
+\hline
+Tipo & req-funcional & Funcionalidades del sistema \\
+\hline
+Tipo & req-no-funcional & Restricciones y calidad \\
+\hline
+Prioridad & prioridad-critica & Esencial para MVP \\
+\hline
+Prioridad & prioridad-alta & Importante para v1.0 \\
+\hline
+Estado & identificado & Requisito documentado \\
+\hline
+Estado & aprobado & Validado por stakeholders \\
+\hline
+Módulo & modulo-auth & Autenticación y autorización \\
+\hline
+Módulo & modulo-tutorias & Core del negocio \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Plan de Configuración}
+
+\begin{table}[H]
+\centering
+\caption{Fases de Implementación}
+\begin{tabular}{|p{3cm}|p{6cm}|p{4cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Fase} & \textbf{\color{white}Actividades} & \textbf{\color{white}Tiempo} \\
+\hline
+Setup Inicial & Crear repositorio, habilitar Issues, crear Project Board & 2-3 horas \\
+\hline
+Sistema Etiquetas & Labels por tipo, prioridad, estado, módulo & 1 hora \\
+\hline
+Milestones & Definir iteraciones y fechas de entrega & 1-2 horas \\
+\hline
+Automatización & GitHub Actions para auto-labeling & 3-4 horas \\
+\hline
+\rowcolor{successgreen!30}
+\textbf{Total} & Configuración completa & \textbf{8-12 horas} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Ventajas para Estudiantes}
+
+\begin{itemize}
+    \item \textbf{Costo}: Completamente gratuito
+    \item \textbf{Aprendizaje}: Herramienta estándar en la industria
+    \item \textbf{Portfolio}: Proyectos quedan documentados
+    \item \textbf{Colaboración}: Fácil trabajo en equipo
+    \item \textbf{Escalabilidad}: Útil para proyectos futuros
+\end{itemize}
+
+\subsection{Limitaciones}
+
+\begin{itemize}
+    \item Requiere aprender GitHub si no se conoce
+    \item Menos funciones específicas que herramientas especializadas
+    \item Necesita conexión a internet
+\end{itemize}
+
+\subsection{Funcionalidades Clave de GitHub Projects para TutoESPEcialistas}
+
+\subsubsection{Gestión de Estados}
+
+Para el proyecto TutoESPEcialistas, se implementará un flujo de estados específico que refleje el ciclo de vida de los requisitos:
+
+\begin{itemize}
+    \item \textbf{Estados principales}:
+    \begin{itemize}
+        \item \texttt{identificado}: Requisito inicial documentado por stakeholders (estudiantes, tutores)
+        \item \texttt{en-analisis}: Requisito bajo revisión técnica del equipo
+        \item \texttt{validado}: Requisito aprobado por el equipo académico
+        \item \texttt{en-desarrollo}: Requisito siendo implementado
+        \item \texttt{completado}: Requisito implementado y probado
+    \end{itemize}
+    \item \textbf{Project boards personalizados}: Tablero "Requisitos TutoESPEcialistas" con columnas por cada estado
+    \item \textbf{Automatización específica}: GitHub Actions configurado para mover automáticamente requisitos cuando se cierran PRs relacionados
+\end{itemize}
+
+\subsubsection{Trazabilidad en TutoESPEcialistas}
+
+La trazabilidad es crucial dado que el sistema maneja 18 requisitos interdependientes:
+
+\begin{itemize}
+    \item \textbf{Matriz de dependencias}:
+    \begin{itemize}
+        \item RF01 (Autenticación) → RF02 (Perfil Usuario) → RF03 (Búsqueda Tutores)
+        \item RF04 (Solicitud Tutoría) → RF05 (Sistema Pagos) → RF06 (Confirmación)
+        \item RNF01 (Rendimiento) afecta a todos los requisitos funcionales
+    \end{itemize}
+    \item \textbf{Referencias cruzadas}: Cada issue referencia requisitos relacionados usando \#número
+    \item \textbf{Milestones académicos}:
+    \begin{itemize}
+        \item Milestone 1: "MVP - Funciones Básicas" (RF01-RF06)
+        \item Milestone 2: "Sistema Completo" (RF07-RF10)
+        \item Milestone 3: "Optimización" (RNF01-RNF08)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Versionado de Requisitos}
+
+Control de cambios específico para el contexto académico:
+
+\begin{itemize}
+    \item \textbf{Historial académico}: Cada modificación incluye justificación y aprobación del equipo
+    \item \textbf{Versionado semántico}: v1.0 (requisito inicial), v1.1 (refinamiento), v2.0 (cambio mayor)
+    \item \textbf{Integración con entregas}: Cada entrega académica corresponde a una versión específica
+    \item \textbf{Documentación de cambios}: Timeline detallado para revisiones del profesor
+\end{itemize}
+
+\subsubsection{Visualizaciones Específicas para TutoESPEcialistas}
+
+Diagramas y vistas adaptadas al dominio de tutorías:
+
+\begin{itemize}
+    \item \textbf{Diagrama de flujo de usuario}:
+    \begin{itemize}
+        \item Vista: Estudiante busca tutor → Solicita tutoría → Realiza pago → Recibe tutoría
+        \item Vista: Tutor se registra → Configura perfil → Recibe solicitudes → Imparte tutoría
+    \end{itemize}
+    \item \textbf{Matriz de prioridades por actor}:
+    \begin{itemize}
+        \item Estudiantes: RF03 (Búsqueda), RF04 (Solicitud), RF07 (Chat)
+        \item Tutores: RF02 (Perfil), RF08 (Disponibilidad), RF09 (Calificaciones)
+        \item Administradores: RF10 (Reportes), RNF02 (Seguridad), RNF03 (Escalabilidad)
+    \end{itemize}
+    \item \textbf{Gráficos de dependencias modulares}:
+    \begin{itemize}
+        \item Módulo Autenticación: RF01, RNF02, RNF04
+        \item Módulo Tutorías: RF03, RF04, RF06, RNF01
+        \item Módulo Pagos: RF05, RNF05, RNF06
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Priorización Contextual}
+
+Sistema de prioridades adaptado a las necesidades del proyecto académico:
+
+\begin{itemize}
+    \item \textbf{Priorización por entrega}:
+    \begin{itemize}
+        \item \texttt{critica}: Requisitos para MVP (RF01, RF02, RF03, RF04)
+        \item \texttt{alta}: Requisitos para versión completa (RF05, RF06, RF07)
+        \item \texttt{media}: Requisitos de mejora (RF08, RF09, RF10)
+        \item \texttt{baja}: Requisitos futuros (funcionalidades adicionales)
+    \end{itemize}
+    \item \textbf{Filtros por stakeholder}:
+    \begin{itemize}
+        \item Vista "Estudiantes": Requisitos que impactan la experiencia del estudiante
+        \item Vista "Tutores": Requisitos específicos para tutores
+        \item Vista "Técnica": Requisitos no funcionales y arquitecturales
+    \end{itemize}
+    \item \textbf{Ordenamiento por complejidad}:
+    \begin{itemize}
+        \item Baja: RF01, RF02 (autenticación básica)
+        \item Media: RF03, RF04, RF06 (funcionalidades core)
+        \item Alta: RF05, RF07 (pagos, chat en tiempo real)
+    \end{itemize}
+    \item \textbf{Indicadores visuales}:
+    \begin{itemize}
+        \item Labels de color para identificación rápida
+        \item Badges de estado en cada requisito
+        \item Progreso visual por milestone académico
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Configuración Específica para el Equipo}
+
+Adaptación del flujo de trabajo para el contexto académico de 3 integrantes:
+
+\begin{itemize}
+    \item \textbf{Roles definidos}:
+    \begin{itemize}
+        \item Dennison: Product Owner - Gestión de requisitos funcionales
+        \item Fernando: Tech Lead - Requisitos no funcionales y arquitectura
+        \item Judá: QA Lead - Validación y testing de requisitos
+    \end{itemize}
+    \item \textbf{Flujo de aprobación}:
+    \begin{itemize}
+        \item Creación: Cualquier miembro puede crear requisitos
+        \item Validación: Requiere aprobación de 2 de 3 miembros
+        \item Implementación: Asignación rotatoria entre el equipo
+    \end{itemize}
+    \item \textbf{Templates específicos}:
+    \begin{itemize}
+        \item Template "Requisito Funcional TutoESPEcialistas"
+        \item Template "Requisito No Funcional TutoESPEcialistas"
+        \item Template "Historia de Usuario - Estudiante/Tutor"
+    \end{itemize}
+\end{itemize}
+
+\section{Conclusión}
+
+\begin{tcolorbox}[colback=lightblue!15, colframe=headercolor, rounded corners, boxrule=2pt, title=Decisión Final]
+GitHub Projects es la opción óptima para TutoESPEcialistas por ser \textbf{completamente gratuita}, ofrecer todas las funcionalidades necesarias para gestión de requisitos, y ser ampliamente utilizada en entornos académicos y profesionales.
+\end{tcolorbox}
+
+\newpage
+
+\section{Técnicas de Visualización de Requisitos}
+
+\begin{tcolorbox}[colback=lightblue!10, colframe=headercolor, rounded corners, title=Objetivo de las Visualizaciones]
+Implementar técnicas de visualización efectivas para representar los requisitos del sistema TutoESPEcialistas de manera clara y comprensible para todos los stakeholders, facilitando la comunicación, el análisis y la toma de decisiones durante el desarrollo del proyecto.
+\end{tcolorbox}
+
+\subsection{Importancia de la Visualización en TutoESPEcialistas}
+
+\begin{tcolorbox}[colback=white, colframe=darkblue, rounded corners, boxrule=1pt]
+\textbf{Contexto}: El proyecto TutoESPEcialistas involucra múltiples actores (estudiantes, tutores, administradores) con diferentes perspectivas y necesidades. La visualización efectiva de los 18 requisitos es fundamental para:
+
+\begin{itemize}[itemsep=0.2em]
+    \item Facilitar la comprensión de requisitos complejos
+    \item Identificar dependencias entre funcionalidades
+    \item Comunicar el alcance del proyecto a stakeholders
+    \item Validar requisitos con usuarios finales
+    \item Guiar el proceso de desarrollo y testing
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Técnicas de Visualización Seleccionadas}
+
+\subsubsection{Diagramas de Casos de Uso}
+
+\textbf{Propósito}: Representar las interacciones entre actores y el sistema.
+
+\begin{table}[H]
+\centering
+\caption{Casos de Uso por Actor}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Actor} & \textbf{\color{white}Casos de Uso Principales} \\
+\hline
+Estudiante & Registrarse, Buscar Tutores, Solicitar Tutoría, Realizar Pago, Chatear con Tutor, Calificar Tutoría \\
+\hline
+Tutor & Registrarse, Configurar Perfil, Gestionar Disponibilidad, Aceptar Solicitudes, Impartir Tutoría, Ver Calificaciones \\
+\hline
+Administrador & Gestionar Usuarios, Generar Reportes, Monitorear Sistema, Configurar Plataforma \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Matriz de Trazabilidad Visual}
+
+\textbf{Propósito}: Mostrar las relaciones entre requisitos funcionales y no funcionales.
+
+\begin{table}[H]
+\centering
+\caption{Matriz de Dependencias de Requisitos}
+\footnotesize
+\begin{tabular}{|p{2cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Requisito} & \textbf{\color{white}RF01} & \textbf{\color{white}RF02} & \textbf{\color{white}RF03} & \textbf{\color{white}RF04} & \textbf{\color{white}RF05} & \textbf{\color{white}RNF01} \\
+\hline
+RF01 - Auth & \cellcolor{gray} & \cellcolor{successgreen!30}X & \cellcolor{successgreen!30}X & \cellcolor{successgreen!30}X & \cellcolor{successgreen!30}X & \cellcolor{warningorange!30}D \\
+\hline
+RF02 - Perfil & & \cellcolor{gray} & \cellcolor{successgreen!30}X & \cellcolor{successgreen!30}X & & \cellcolor{warningorange!30}D \\
+\hline
+RF03 - Búsqueda & & & \cellcolor{gray} & \cellcolor{successgreen!30}X & & \cellcolor{dangerred!30}C \\
+\hline
+RF04 - Solicitud & & & & \cellcolor{gray} & \cellcolor{successgreen!30}X & \cellcolor{dangerred!30}C \\
+\hline
+RF05 - Pagos & & & & & \cellcolor{gray} & \cellcolor{dangerred!30}C \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Leyenda}: X = Dependencia directa, D = Dependencia débil, C = Impacto crítico
+
+\subsubsection{Diagramas de Flujo de Procesos}
+
+\textbf{Proceso Principal - Solicitud de Tutoría}:
+
+\begin{enumerate}
+    \item \textbf{Inicio}: Estudiante autenticado busca tutor
+    \item \textbf{Búsqueda}: Filtros por materia, horario, precio (RF03)
+    \item \textbf{Selección}: Estudiante revisa perfil del tutor (RF02)
+    \item \textbf{Solicitud}: Estudiante envía solicitud (RF04)
+    \item \textbf{Confirmación}: Tutor acepta/rechaza solicitud
+    \item \textbf{Pago}: Procesamiento del pago (RF05)
+    \item \textbf{Tutoría}: Sesión mediante chat/video (RF07)
+    \item \textbf{Finalización}: Calificación y feedback (RF09)
+\end{enumerate}
+
+\subsubsection{Mockups de Interfaces}
+
+\textbf{Pantallas Principales}:
+
+\begin{table}[H]
+\centering
+\caption{Interfaces por Requisito Funcional}
+\begin{tabular}{|p{3cm}|p{4cm}|p{7cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Requisito} & \textbf{\color{white}Pantalla} & \textbf{\color{white}Elementos Clave} \\
+\hline
+RF01 & Login/Registro & Formularios, validaciones, enlaces sociales \\
+\hline
+RF02 & Perfil Usuario & Foto, datos personales, especialidades, horarios \\
+\hline
+RF03 & Búsqueda Tutores & Filtros, resultados en grid, mapas de ubicación \\
+\hline
+RF04 & Solicitud Tutoría & Calendario, formulario de solicitud, detalles \\
+\hline
+RF05 & Pasarela Pagos & Métodos de pago, resumen, confirmación \\
+\hline
+RF07 & Chat/Video & Interfaz de mensajería, controles de video \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Diagramas de Arquitectura}
+
+\textbf{Vista de Componentes}:
+
+\begin{itemize}
+    \item \textbf{Frontend}: React/Angular para interfaces de usuario
+    \item \textbf{Backend API}: Node.js/Express para lógica de negocio
+    \item \textbf{Base de Datos}: PostgreSQL para persistencia
+    \item \textbf{Servicios Externos}: PayPal/Stripe para pagos, Socket.io para chat
+    \item \textbf{Autenticación}: JWT para sesiones seguras
+\end{itemize}
+
+\subsection{Herramientas de Visualización}
+
+\begin{table}[H]
+\centering
+\caption{Herramientas Recomendadas}
+\begin{tabular}{|p{3cm}|p{4cm}|p{7cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Tipo} & \textbf{\color{white}Herramienta} & \textbf{\color{white}Uso Específico} \\
+\hline
+Casos de Uso & Draw.io / Lucidchart & Diagramas UML estándar \\
+\hline
+Mockups & Figma / Adobe XD & Prototipos de alta fidelidad \\
+\hline
+Flujos & Miro / Whimsical & Mapas de proceso y user journey \\
+\hline
+Arquitectura & Draw.io / PlantUML & Diagramas técnicos y de componentes \\
+\hline
+Matrices & Excel / Google Sheets & Trazabilidad y dependencias \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Plan de Implementación de Visualizaciones}
+
+\begin{table}[H]
+\centering
+\caption{Cronograma de Visualizaciones}
+\begin{tabular}{|p{3cm}|p{6cm}|p{3cm}|p{2cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Fase} & \textbf{\color{white}Entregables} & \textbf{\color{white}Responsable} & \textbf{\color{white}Tiempo} \\
+\hline
+Análisis & Casos de uso, matriz de trazabilidad & Dennison & 1 semana \\
+\hline
+Diseño & Mockups de interfaces principales & Fernando & 1 semana \\
+\hline
+Procesos & Diagramas de flujo de negocio & Judá & 3 días \\
+\hline
+Arquitectura & Diagramas técnicos y componentes & Fernando & 3 días \\
+\hline
+Validación & Revisión con stakeholders & Equipo & 2 días \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Beneficios de las Visualizaciones}
+
+\begin{itemize}
+    \item \textbf{Comunicación mejorada}: Reduce malentendidos entre stakeholders
+    \item \textbf{Validación temprana}: Identifica problemas antes del desarrollo
+    \item \textbf{Documentación visual}: Facilita mantenimiento futuro
+    \item \textbf{Alineación del equipo}: Visión compartida del sistema
+    \item \textbf{Evaluación académica}: Demuestra comprensión del dominio
+\end{itemize}
+
+\section{Referencias}
+
+\begin{itemize}
+    \item GitHub Projects Documentation: \href{https://docs.github.com/en/issues/planning-and-tracking-with-projects}{docs.github.com/en/issues/planning-and-tracking-with-projects}
+    \item IEEE 830-1998: Recommended Practice for Software Requirements Specifications
+\end{itemize}
+
+\end{document}

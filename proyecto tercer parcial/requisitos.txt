@@ -1,0 +1,571 @@
+ 
+
+
+
+
+
+
+
+Proyecto: Tuto ESPEcialistas
+
+GRUPO 4  
+INTEGRANTES:
+Chalacan Dennison
+Sandoval Fernando
+Grijalva Judá
+
+NRC: 23284
+Fecha: 26/05/2025
+
+Asignatura: Ingenieria en requisitos
+
+DOCENTE: Ing. Carlos Andres Pillajo Bolagay
+
+Unidad #1
+
+
+
+1.	Introducción
+
+En la ESPE, la gestión de tutorías sigue siendo un proceso descentralizado, informal y poco eficiente, lo que dificulta que los alumnos encuentren el apoyo que necesitan. Frente a esta problemática, presentamos el desarrollo de una plataforma digital de tutorías académicas, diseñada para conectar de manera ágil y estructurada a estudiantes con tutores calificados (ya sean compañeros o docentes).
+Este proyecto no solo busca optimizar un proceso crítico dentro de la universidad, sino que también sirve como un caso práctico aplicado de Ingeniería de Requisitos, donde se emplearán metodologías formales para identificar, documentar y validar las necesidades reales de los usuarios.
+1.1.	Propósito
+El propósito de este documento de Especificación de Requisitos del Software (ERS) es definir de manera clara, completa y estructurada los requisitos del sistema Tuto ESPEcialistas. Este documento está dirigido principalmente al equipo de desarrollo, analistas de sistemas, diseñadores, testers, y partes interesadas (stakeholders), como docentes y estudiantes, quienes participarán en el diseño, implementación, validación y uso del sistema.
+1.2 Equipo de trabajo
+Name	Rol	Categoría Profesional	Responsabilidad
+	Información de contacto
+Dennison Chalacan 
+	Analista, diseñador y programador	Ingeniero de Software	Análisis de información, diseño y seguridad	dachalacan1@espe.edu.ec
+Judá Grijalva 
+	Analista, diseñador y programador	Ingeniero de Software	Análisis de información, diseño y seguridad	jbgrijalva@espe.edu.ec
+Fernando
+Sandoval	Analista, diseñador y programador	Ingeniero de Software	Análisis de información, diseño y seguridad	rfsandoval1@espe.edu.ec
+
+
+1.3	Ámbito del Sistema
+Nombre del sistema: Tuto ESPEcialistas
+Lo que hará el sistema:
+Tuto ESPEcialistas será una plataforma web orientada a facilitar y gestionar tutorías académicas entre estudiantes y docentes. Permitirá que estudiantes con buen rendimiento académico y/o profesores se registren como tutores, y que estudiantes con dificultades o necesidades académicas puedan solicitar tutorías en materias específicas. El sistema incluirá funcionalidades de solicitud, asignación, seguimiento y evaluación de sesiones de tutoría, además de aportes motivacionales tanto para los tutores como para los tutorados.
+Lo que no hará el sistema:
+No se encargará directamente de coordinar espacios físicos para las tutorías, ni evaluará el contenido académico impartido en las sesiones. Tampoco gestionará pagos, ya que se trata de un proyecto con fines colaborativos dentro de una institución educativa. 
+Beneficios esperados:
+●	Disminuir los índices de reprobación mediante apoyo académico oportuno.
+
+●	Fortalecer la colaboración entre pares y la comunidad estudiantil.
+
+●	Agilizar y formalizar el proceso de solicitud y asignación de tutorías.
+
+Objetivos y metas:
+●	Diseñar un sistema funcional y accesible para estudiantes y profesores.
+
+●	Implementar una herramienta centralizada que permita el seguimiento del historial de tutorías.
+
+●	Generar reportes útiles para autoridades académicas sobre el rendimiento de estudiantes y eficacia de tutorías.
+
+Referencias a documentos de nivel superior:
+Este proyecto está alineado con los lineamientos institucionales sobre acompañamiento académico, aunque no existe un documento superior de especificación de requisitos globales actualmente publicado.
+1.4	Objetivo general del modelado
+Definir y documentar de manera estructurada y comprensible los requisitos y el comportamiento del sistema Tuto ESPEcialistas, mediante el uso de diagramas UML y otros artefactos de modelado, para garantizar una correcta interpretación y desarrollo del sistema por parte de los diseñadores, programadores y demás stakeholders involucrados. El modelado busca proporcionar una visión clara de las funcionalidades, flujos, datos y estados del sistema, facilitando su implementación, validación y mantenimiento.
+
+1.5	Alcance del modelo presentado
+El modelo presentado abarca todos los aspectos fundamentales del sistema Tuto ESPEcialistas, desde la perspectiva de los usuarios (tutores, tutorandos y docentes) hasta las interacciones internas y externas del sistema. Incluye la definición de los casos de uso principales, las especificaciones detalladas de los mismos, los flujos de interacción entre actores y componentes, la estructura de datos y las entidades clave.
+Concretamente, el modelado comprenderá los siguientes artefactos:
+●	Diagrama de casos de uso
+●	Especificación de casos de uso
+●	Diagramas de secuencia
+●	Diagrama de estados
+●	Diagrama de clases
+●	Diagrama entidad-relación
+●	Diagrama de flujo de datos
+●	Diagrama de actividades
+Este alcance permite tener una representación integral del sistema, tanto a nivel funcional como estructural y dinámico, cubriendo las expectativas y requisitos identificados para la implementación futura del sistema.
+1.6	Definiciones, Acronimos y Abreviaturas
+●	ERS: Especificación de Requisitos del Software
+●	UI: Interfaz de Usuario
+●	RF: Requisito Funcional
+●	RNF: Requisito No Funcional
+●	Stakeholders: Partes interesadas que se ven afectadas directa o indirectamente por el sistema
+●	Tutor: Persona (estudiante o profesor) que brinda apoyo académico a otros
+●	Tutorado: Estudiante que recibe la tutoría
+●	Tuto ESPEcialistas: Nombre del sistema de gestión de tutorías internas en la ESPE
+1.7	Referencias
+●	Lineamientos institucionales sobre acompañamiento académico 
+●	IEEE 830-1998 – Recommended Practice for Software Requirements Specifications
+●	Resultados de entrevistas realizadas a estudiantes y docentes de la ESPE
+●	Técnicas creativas de reducción de requisitos.
+1.8	Visión General del Documento
+Este documento está estructurado para proporcionar una visión clara del sistema Tuto ESPEcialistas. Comienza con la introducción general y el propósito del sistema, seguido de la identificación de las fuentes de requisitos y su clasificación en funcionales y no funcionales. Posteriormente, se presenta un listado codificado de estos requisitos, y se describe la plantilla utilizada para su documentación. Finalmente, se concluye con una reflexión sobre el proceso de identificación y documentación. Esta estructura sigue una aproximación basada en el estándar IEEE 830 para facilitar su comprensión y trazabilidad.
+2.	 Descripción General
+Esta sección describe el contexto del sistema Tuto ESPEcialistas, proporcionando una visión general de su entorno, funciones principales, usuarios previstos, restricciones y consideraciones futuras que puedan influir en su desarrollo.
+2.1. Perspectiva del Producto
+Tuto ESPEcialistas es un sistema independiente desarrollado como solución interna para la Universidad de las Fuerzas Armadas – ESPE. No depende de otros productos externos, aunque podría integrarse en el futuro con plataformas institucionales como el sistema de gestión académica (por ejemplo, el sistema de matrículas o calificaciones).
+El sistema forma parte del ecosistema de apoyo académico de la universidad y se comunicará eventualmente con módulos como autenticación institucional (SSO) y bases de datos de estudiantes y docentes. La interacción entre estos módulos podrá facilitar el acceso controlado y la verificación de datos académicos.
+Diagrama de bloques :
+ 
+2.2. Funciones del Producto
+El sistema Tuto ESPEcialistas proporcionará las siguientes funciones principales:
+●	Registro de usuarios (estudiantes y docentes).
+
+●	Postulación y validación de tutores.
+
+●	Solicitud de tutorías por parte de estudiantes.
+
+●	Asignación de tutorías (manual o automática).
+
+●	Agenda y seguimiento de sesiones.
+
+●	Evaluación de tutorías (por tutorado y por sistema).
+
+●	Espacio personal para tutores.
+
+Estas funciones estarán organizadas en módulos que permitirán una navegación intuitiva y orientada al perfil del usuario.
+2.3. Características de los Usuarios
+El sistema está diseñado para ser utilizado por dos tipos principales de usuarios:
+●	Estudiantes: Usuarios con conocimientos básicos en informática. Algunos con dificultades académicas y otros con rendimiento alto (potenciales tutores).
+
+●	Docentes: Usuarios con experiencia en el entorno académico y digital de la universidad. Algunos actuarán como tutores, otros como validadores de postulaciones o supervisores.
+En general, los usuarios tienen un nivel educativo de al menos secundaria completa, con experiencia básica en el uso de plataformas educativas virtuales.
+2.4. Restricciones
+El desarrollo del sistema está sujeto a las siguientes restricciones:
+●	Políticas institucionales: El sistema debe alinearse con los reglamentos de acompañamiento académico de la ESPE.
+
+●	Limitaciones técnicas: Se espera que funcione en navegadores  y dispositivos con conexión a internet estable.
+
+●	Lenguajes y tecnologías: El sistema se desarrollará con tecnologías web como HTML, CSS, JavaScript (posiblemente framework como React), y backend en Node.js , o Python (según decisión del equipo).
+
+●	Seguridad: Se requiere autenticación segura con credenciales institucionales y manejo adecuado de datos personales.
+
+●	Compatibilidad: No se contempla, en esta versión, integración completa con el sistema académico actual.
+2.5. Suposiciones y Dependencias
+El desarrollo del sistema se basa en los siguientes supuestos:
+●	Los estudiantes y docentes cuentan con acceso a internet y dispositivos para conectarse al sistema.
+
+●	La universidad respaldará institucionalmente la implementación del sistema.
+
+●	El sistema operará inicialmente de manera independiente, sin integración con plataformas como Moodle o el sistema de notas.
+
+●	La validación de tutores estará a cargo de personal académico designado o por méritos.
+Si alguna de estas condiciones cambia los requisitos del sistema deberán ser revisados.
+2.6. Requisitos Futuros
+A futuro, se podrían considerar las siguientes mejoras:
+●	Integración con el sistema académico de la universidad.
+
+●	Automatización en la asignación de tutores mediante inteligencia artificial.
+
+●	Aplicación móvil del sistema.
+
+●	Registro de sesiones grabadas o chat con recursos integrados.
+
+●	Módulo de alertas tempranas para identificar estudiantes en riesgo académico.
+●	Canal de mensajería activo en horarios para responder dudas al instante.
+
+3.	 Stakeholders
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.	 Requisitos
+4.1 Requerimientos funcionales
+Identificación de requisitos	RF01
+Requisito - Nombre	Registro de tutorías
+Características	El sistema debe permitir registrar cada sesión de tutoría realizada.
+Descripción del requisito	El sistema permitirá ingresar la fecha, duración, tutor, tutorado y materia tratada en cada sesión registrada.
+Requisito no funcional relacionado	RNF01, RNF02, RNF03
+Versión 	V1.0
+Trazabilidad 	Reunión inicial con usuarios
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RF02
+Requisito - Nombre	Solicitud de tutorías
+Características	El sistema debe permitir que los estudiantes soliciten tutorías de forma sencilla.
+Descripción del requisito	Los estudiantes podrán buscar y solicitar tutorías filtrando por materia, horario y tipo de tutor (estudiante o profesor).
+Requisito no funcional relacionado	RNF01, RNF03, RNF04, RNF06, RNF7
+Versión 	V1.0
+Trazabilidad 	Entrevista con usuarios finales, encuesta interna.
+Prioridad del requerimiento: Alta
+
+
+Identificación de requisitos	RF03
+Requisito - Nombre	Oferta de tutorías
+Características	Los tutores podrán publicar su disponibilidad para tutorías.
+Descripción del requisito	Se deberá ingresar tema, horarios y formato (virtual/presencial).
+Requisito no funcional relacionado	RNF01, RNF03, RNF06, RNF7
+Versión 	V1.0
+Trazabilidad 	Cuestionario aplicado a tutores voluntarios.
+Prioridad del requerimiento: Alta
+
+
+Identificación de requisitos	RF04
+Requisito - Nombre	Evaluación de tutorías
+Características	El sistema debe permitir a los tutorados evaluar cada sesión de tutoría.
+Descripción del requisito	Después de cada tutoría, los tutorados podrán evaluar la sesión indicando nivel de satisfacción, claridad, paciencia del tutor y utilidad percibida.
+Requisito no funcional relacionado	RNF02 (Usabilidad)
+Versión 	V1.0
+Trazabilidad 	Reunión inicial con usuarios clave.
+Prioridad del requerimiento: Alta
+
+
+Identificación de requisitos	RF05
+Requisito - Nombre	Validación de tutores
+Características	El sistema debe permitir validar a los tutores.
+Descripción del requisito	La validación se realizará mediante criterios definidos: rendimiento académico, interés en la materia y actitud colaborativa.
+Requisito no funcional relacionado	RNF05,RNF06,RNF08
+Versión 	V1.0
+Trazabilidad 	Entrevista con docentes.
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RF06
+Requisito - Nombre	Supervisión docente
+Características	Docentes podrán acceder a reportes de tutorías
+Descripción del requisito	El sistema proporcionará a los docentes reportes de sesiones realizadas, desempeño de tutores y progreso de tutorados.
+Requisito no funcional relacionado	RNF01, RNF06, RNF08
+Versión 	V1.0
+Trazabilidad 	Lineamientos del consejo académico ESPE.
+Prioridad del requerimiento: Alta
+
+
+Identificación de requisitos	RF07
+Requisito - Nombre	Acceso a recursos
+Características	Disponibilidad de materiales de apoyo.
+Descripción del requisito	El sistema debe permitir el acceso a recursos como videos, guías, formularios y bibliografía subidos por docentes y tutores.
+Requisito no funcional relacionado	RNF03 
+Versión 	V1.0
+Trazabilidad 	Sugerencias docentes. (Informe)
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RF09
+Requisito - Nombre	Notificaciones
+Características	Envío de recordatorios automáticos.
+Descripción del requisito	El sistema enviará correos electrónicos u otras notificaciones para recordar sesiones agendadas o comunicar novedades.
+Requisito no funcional relacionado	RNF01 (Rendimiento)
+Versión 	V1.0
+Trazabilidad 	Recomendación de usuarios.
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RF10
+Requisito - Nombre	Filtros de búsqueda
+Características	Búsqueda personalizada de tutores.
+Descripción del requisito	Los usuarios podrán buscar tutores por afinidad, calificación, disponibilidad y nivel académico.
+Requisito no funcional relacionado	RNF02,RNF03
+Versión 	V1.0
+Trazabilidad 	Benchmark con plataformas similares (UCSG y UTPL)
+Prioridad del requerimiento: Alta
+
+4.2 Requerimientos no Funcionales
+4.2.1    Rendimiento del sistema
+Identificación de requisitos	RNF01
+Requisito - Nombre	Rendimiento del sistema
+Características	Consultas y registros deben ser ágiles.
+Descripción del requisito	Las operaciones comunes del sistema (como consultar o registrar una tutoría) no deben exceder los 2 segundos de respuesta.
+Requisito no funcional relacionado	RF01, RF02, RF03
+Versión 	V1.0
+Trazabilidad 	Revisión de rendimiento en plataformas.
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RNF02
+Requisito - Nombre	Transacciones por segundo
+Características	Soporte a múltiples usuarios.
+Descripción del requisito	El sistema debe ser capaz de procesar al menos 50 transacciones por segundo sin afectar el rendimiento.
+Requisito no funcional relacionado	RF01, RF10
+Versión 	V1.0
+Trazabilidad 	Evaluación de carga esperada por usuarios concurrentes
+Prioridad del requerimiento: Alta
+  
+  
+4.2.2     Usabilidad 
+
+Identificación de requisitos	RNF03
+Requisito - Nombre	Interfaz intuitiva
+Características	Interfaz amigable para usuarios con poca experiencia digital.
+Descripción del requisito	La interfaz del sistema debe ser intuitiva, con navegación guiada y mensajes claros.
+Requisito no funcional relacionado	RF02, RF03
+Versión 	V1.0
+Trazabilidad 	Encuestas aplicadas a estudiante y retroalimentación docente 
+Prioridad del requerimiento: Alta
+
+
+Identificación de requisitos	RNF04
+Requisito - Nombre	Compatibilidad móvil
+Características	Acceso desde smartphones y tablets.
+Descripción del requisito	El sistema debe ser responsive, adaptándose a pantallas móviles y manteniendo su funcionalidad completa.
+Requisito no funcional relacionado	RF02
+Versión 	V1.0
+Trazabilidad 	Estandarización multiplataforma institucional
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RNF05
+Requisito - Nombre	Seguridad y respeto
+Características	Reporte de conductas inapropiadas.
+Descripción del requisito	El sistema deberá tener mecanismos para reportar comportamiento indebido y promover una experiencia segura y en un ambiente de respeto para los usuarios.
+Requisito no funcional relacionado	RF05
+Versión 	V1.0
+Trazabilidad 	Reglamento de ética universitaria y normativa del DCCO.
+Prioridad del requerimiento: Alta
+
+
+4.2.3   Restricciones de Diseño
+Identificación de requisitos	RNF06
+Requisito - Nombre	Integración institucional
+Características	Compatibilidad con sistemas existentes.
+Descripción del requisito	El sistema debe conectarse con el servidor institucional de autenticación (LDAP/OAuth) de la ESPE.
+Requisito no funcional relacionado	RF05, RF06
+Versión 	V1.0
+Trazabilidad 	Política de seguridad tecnológica de ESPE.
+Prioridad del requerimiento: Alta
+
+Identificación de requisitos	RNF07
+Requisito - Nombre	Navegadores compatibles
+Características	Soporte multiplataforma.
+Descripción del requisito	El sistema debe ser compatible con Chrome, Firefox, Safari y Edge; además de funcionar en distintos sistemas operativos.
+Requisito no funcional relacionado	RF02, RF03
+Versión 	V1.0
+Trazabilidad 	Lineamientos de desarrollo web del área TIC institucional.
+Prioridad del requerimiento: Alta
+4.2.4   Atributos del Sistema
+Identificación de requisitos	RNF8
+Requisito - Nombre	Seguridad de datos
+Características	Protección de la información personal y académica.
+Descripción del requisito	Toda la información debe cifrarse en tránsito (TLS 1.3) y almacenarse conforme a normativa vigente de la ESPE.
+Requisito no funcional relacionado	RF05, RF06
+Versión 	V1.0
+Trazabilidad 	Recomendación de buenas prácticas de ciberseguridad.
+Prioridad del requerimiento: Alta
+
+
+
+
+
+5.	 Diagrama de Casos de Uso General
+El Diagrama de Casos de Uso General se organizó por dimensiones para facilitar la comprensión de las funcionalidades del sistema Tuto ESPEcialistas según los roles y ámbitos de interacción. Esta forma de presentación permite identificar claramente las acciones específicas de cada usuario y asegurar que sus necesidades estén bien representadas en el modelo.
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+5.1   Especificación de Casos de Uso
+5.1.1   Caso de uso: Solicitar tutoría
+No.	Sección	Contenido / Explicación
+1	Codificación	CU002
+2	Nombre	Solicitar tutoría
+3	Autores	Grupo 4
+4	Prioridad	Alta
+5	Criticidad	Alta: Un fallo impide el acceso a tutorías y afecta la misión principal del sistema.
+6	Fuente	Stakeholder (estudiantes), entrevistas, documentación institucional
+7	Persona responsable	Estudiante (Solicitante)
+8	Descripción	Permite a un estudiante solicitar una tutoría, seleccionando materia, horario y tipo de tutor.
+9	Evento trigger (activación)	El estudiante accede a la opción “Solicitar tutoría”
+10	Actores	Estudiante (principal), Sistema
+11	Condiciones previas	El estudiante debe estar autenticado y tener acceso al sistema.
+12	Condiciones posteriores	La solicitud queda registrada y notificada al tutor correspondiente.
+13	Resultado	Solicitud de tutoría creada y enviada, tutor notificado.
+14	Escenario principal	1. El estudiante inicia sesión.
+2. Selecciona “Solicitar tutoría”.
+3. Ingresa materia, horario y tipo de tutor.
+4. El sistema valida la información.
+5. El sistema registra la solicitud.
+6. El tutor recibe notificación.
+15	Escenarios alternativos	1. El estudiante modifica la solicitud antes de enviarla.
+2. El tutor propuesto rechaza la solicitud y el estudiante puede elegir otro tutor.
+16	Escenarios de excepción	1. El estudiante no completa todos los campos requeridos (el sistema muestra errores y no permite avanzar).
+2. No hay tutores disponibles para la materia y horario seleccionados (el sistema informa y sugiere otras opciones).
+17	Mapeo a requisitos de calidad	RNF01 (tiempo de respuesta), RNF03 (interfaz intuitiva), RNF04 (compatibilidad móvil)
+
+5.1.2   Caso de uso: Ofertar tutoría
+No.	Sección	Contenido / Explicación
+1	Codificación	CU003
+2	Nombre	Ofertar tutoría
+3	Autores	Grupo 4
+4	Prioridad	Alta
+5	Criticidad	Media: Un fallo limita la oferta de sesiones, pero no impide el resto del sistema.
+6	Fuente	Stakeholder (tutores), entrevistas, documentación institucional
+7	Persona responsable	Tutor (Estudiante/Docente que ofrece tutoría)
+8	Descripción	Permite a un tutor publicar su disponibilidad para ofrecer tutorías, indicando materia, horario y formato.
+9	Evento trigger (activación)	El tutor accede a la opción “Ofertar tutoría”
+10	Actores	Tutor (principal), Sistema
+11	Condiciones previas	El tutor debe estar autenticado y validado por un docente.
+12	Condiciones posteriores	La oferta queda registrada y visible para los estudiantes.
+13	Resultado	Nueva oferta de tutoría publicada y disponible en el sistema.
+14	Escenario principal	1. El tutor inicia sesión.
+2. Selecciona “Ofertar tutoría”.
+3. Ingresa materia, horarios y formato.
+4. El sistema valida la información.
+5. El sistema publica la oferta.
+15	Escenarios alternativos	1. El tutor edita la oferta después de publicarla.
+2. El tutor elimina una oferta existente.
+16	Escenarios de excepción	1. El tutor no completa todos los campos requeridos (el sistema muestra error y no permite avanzar).
+2. El tutor no está validado (el sistema bloquea la publicación y muestra aviso).
+17	Mapeo a requisitos de calidad	RNF01, RNF03, RNF04, RNF06
+
+5.1.3   Caso de uso: Registrar sesión de tutoría
+No.	Sección	Contenido / Explicación
+1	Codificación	CU004
+2	Nombre	Registrar sesión de tutoría
+3	Autores	Grupo 4
+4	Prioridad	Alta
+5	Criticidad	Alta: Sin registros, no hay trazabilidad ni control institucional.
+6	Fuente	Stakeholder, reglamento académico
+7	Persona responsable	Tutor (principal), Tutorados (pueden confirmar), Docente (opcional)
+8	Descripción	Permite registrar los detalles de una sesión realizada: participantes, fecha, duración y materia.
+9	Evento trigger (activación)	Finalización de una sesión de tutoría
+10	Actores	Tutor, Tutorados, Docente (opcional), Sistema
+11	Condiciones previas	La tutoría debe haber sido agendada y ambos participantes deben estar autenticados.
+12	Condiciones posteriores	La sesión queda registrada y puede ser consultada en reportes.
+13	Resultado	Registro exitoso de la sesión, disponible para consulta y evaluación posterior.
+14	Escenario principal	1. Tutor inicia sesión.
+2. Accede a “Registrar sesión”.
+3. Ingresa los detalles (fecha, duración, materia, tutorados).
+4. El sistema valida y almacena la información.
+5. Notifica al tutorado y docente (si aplica).
+15	Escenarios alternativos	1. El tutorado confirma o añade comentarios al registro.
+2. El docente edita o valida el registro.
+16	Escenarios de excepción	1. Faltan datos obligatorios (el sistema muestra error y solicita completarlos).
+2. Intento de registrar sesión no agendada (el sistema bloquea y avisa).
+17	Mapeo a requisitos de calidad	RNF01, RNF03, RNF04, RNF07
+
+5.1.4   Caso de uso: Filtrar/buscar tutores
+No.	Sección	Contenido / Explicación
+1	Codificación	CU005
+2	Nombre	Filtrar/buscar tutores
+3	Autores	Grupo 4
+4	Prioridad	Alta
+5	Criticidad	Media: Un fallo reduce la eficiencia de la búsqueda, pero no impide la operación manual.
+6	Fuente	Benchmark de plataformas, requerimientos de usuarios
+7	Persona responsable	Estudiante (buscador), Sistema
+8	Descripción	Permite a los estudiantes buscar tutores aplicando filtros de materia, calificación, horario y nivel.
+9	Evento trigger (activación)	El estudiante accede a “Buscar tutores”
+10	Actores	Estudiante, Sistema
+11	Condiciones previas	Debe haber tutores registrados y ofertas vigentes.
+12	Condiciones posteriores	Lista de tutores filtrada y mostrada al usuario.
+13	Resultado	Visualización de tutores que cumplen los criterios seleccionados.
+14	Escenario principal	1. Estudiante inicia sesión.
+2. Accede a “Buscar tutores”.
+3. Aplica filtros.
+4. El sistema muestra resultados.
+15	Escenarios alternativos	1. El estudiante modifica los filtros y obtiene nuevos resultados.
+2. Visualiza el perfil de un tutor.
+16	Escenarios de excepción	1. No hay tutores que cumplan los criterios (el sistema muestra mensaje y sugiere ampliar filtros).
+17	Mapeo a requisitos de calidad	RNF01, RNF02, RNF03, RNF04
+
+5.1.5   Caso de uso: Confirmar/agendar tutoría
+No.	Sección	Contenido / Explicación
+1	Codificación	CU006
+2	Nombre	Confirmar/agendar tutoría
+3	Autores	Grupo 4
+4	Prioridad	Media
+5	Criticidad	Media: Un fallo puede causar confusiones y faltas de asistencia, pero no compromete la operación general.
+6	Fuente	Stakeholder, análisis de flujos
+7	Persona responsable	Estudiante, Tutor, Sistema
+8	Descripción	Permite que ambas partes confirmen/agenden la tutoría antes de realizarla.
+9	Evento trigger (activación)	Una solicitud de tutoría es aceptada por el tutor.
+10	Actores	Estudiante, Tutor, Sistema
+11	Condiciones previas	Debe existir una solicitud y oferta compatibles, ambas partes autenticadas.
+12	Condiciones posteriores	La tutoría queda confirmada y agendada en el sistema; se genera notificación a ambos.
+13	Resultado	Sesión confirmada y programada en el calendario de los participantes.
+14	Escenario principal	1. Tutor acepta solicitud.
+2. Sistema notifica al estudiante.
+3. Estudiante confirma/agenda.
+4. Sistema registra y agenda.
+15	Escenarios alternativos	1. El estudiante rechaza o reprograma. El tutor propone otro horario.
+16	Escenarios de excepción	1. Uno de los participantes no responde (la solicitud caduca y se notifica la cancelación).
+17	Mapeo a requisitos de calidad	RNF01, RNF03, RNF04
+
+5.2   Modelado desde Diferentes Perspectivas
+5.1.1   Perspectiva de Datos
+5.1.1.1   Diagrama de Clases
+
+ 
+
+
+
+5.1.1.2   Modelo Entidad-Relación
+
+ 
+
+5.2.2   Perspectiva Funcional
+
+5.2.2.1   Diagrama de Flujo de Datos (DFD)
+ 
+5.2.2.2   Diagrama de Actividades
+
+ 
+5.2.3   Perspectiva de Comportamiento
+5.2.3.1   Diagrama de Estados
+
+ 
+5.2.3.2   Diagrama de Secuencia
+ 
+6.	 Conclusiones 
+6.1 Aprendizajes del grupo sobre el proceso de identificación y documentación de requisitos.
+Durante el proceso de identificación y documentación de requisitos del proyecto Tuto ESPEcialistas, el grupo comprendió la importancia de involucrar a los distintos actores del sistema desde el inicio. Las entrevistas realizadas permitieron descubrir necesidades reales de los usuarios, tanto desde la perspectiva de quienes buscan ayuda como de quienes pueden brindarla. Además, se valoró la utilidad de clasificar y redactar requisitos con claridad, lo que facilita su análisis posterior y desarrollo del sistema.
+6.2 Reflexión del grupo sobre el proceso de modelado.
+El proceso de modelado del sistema Tuto ESPEcialistas nos permitió comprender la importancia de planificar y estructurar adecuadamente un proyecto antes de implementarlo. La identificación de actores, casos de uso y diagramas nos ayudó a visualizar las interacciones entre los usuarios y el sistema, y a detectar posibles mejoras desde las primeras etapas. Este proceso también nos permitió fortalecer el trabajo en equipo, ya que fue necesario discutir y consensuar las funcionalidades más relevantes para los usuarios, priorizando sus necesidades reales. En general, el modelado resultó ser una herramienta valiosa para alinear nuestras ideas con los objetivos del proyecto.
+6.3 Identificación de desafíos enfrentados
+Durante el modelado, nos enfrentamos a varios desafíos. Uno de los principales fue definir con claridad los límites del sistema, ya que inicialmente surgieron muchas ideas adicionales que no eran factibles en esta primera versión. Otro desafío fue interpretar correctamente las expectativas de los diferentes actores y traducirlas en casos de uso específicos y realistas. Además, al no estar familiarizados con algunas notaciones de los diagramas UML, dedicamos tiempo adicional a investigar y entender cómo representarlas correctamente. Por último, coordinar los horarios de todos los miembros del grupo para las reuniones también fue un reto logístico importante.
+6.4 Lecciones aprendidas para futuros proyectos de desarrollo.
+Entre las principales lecciones aprendidas destacamos la importancia de invertir tiempo suficiente en la etapa de análisis y modelado, ya que esto facilita el desarrollo posterior y reduce errores. También aprendimos que es fundamental mantener un alcance claro y bien definido para evitar desviaciones y sobrecarga del sistema. Otra lección es que la comunicación constante y efectiva dentro del grupo es clave para avanzar de manera coordinada. Finalmente, comprendimos que documentar correctamente cada decisión tomada durante el proceso facilita tanto la comprensión del proyecto como la presentación de resultados a terceros.
+7.	Apéndices
+6.1 Apéndice A. Formatos de entrada/salida de datos
+●	Pantalla de registro de tutorado/tutor
+Campos: nombre, ID institucional, materias de interés, horario disponible.
+●	Pantalla de agendamiento de tutoría
+Entrada: materia, fecha, hora, tipo de sesión (virtual/presencial).
+Salida: confirmación, notificación al tutor y tutorado.
+●	Formato de retroalimentación del tutorado
+Entrada: calificación (1 a 5), comentario.
+Salida: estadísticas generales para el sistema.
+6.2 Apéndice B Restricciones técnicas
+1.	El sistema deberá desarrollarse en tecnologías compatibles con la infraestructura de ESPE (por ejemplo, lenguaje de programación JavaScript con Node.js, frontend en React).
+2.	Debe ser compatible con el sistema institucional (correo institucional, base de datos académica).
+3.	No se permitirá el uso de herramientas de terceros que no cumplan con las políticas de privacidad de la universidad.
+6.3 Apéndice C. Análisis estadístico de por que es importante este sistema
+➔	Aproximadamente el 47% de los estudiantes de primer y segundo semestre en carreras de ingeniería reprueban al menos una materia por periodo.
+➔	De estos la mayor parte de los estudiantes que reprobaron una materia no sabían a quién acudir para recibir ayuda académica adicional. 
+➔	El 60% de los estudiantes con promedio mayor a 17.5 estarían dispuestos a ayudar a sus compañeros si existiera una plataforma institucional de tutorías entre pares .
+➔	Universidades que implementan modelos similares reportaron una reducción del 15-20% en la tasa de reprobación en materias críticas, y un aumento del 25% en la satisfacción estudiantil relacionada al apoyo académico. 
+6.4 Apéndice D Técnicas de Educción
+a.	Entrevistas estructuradas a:
+-	Profesores (potenciales supervisores).
+-	Estudiantes con dificultades académicas (potenciales tutorados).
+-	Estudiantes con buen rendimiento (potenciales tutores).
+b.	Observación directa : sobre asistencia a tutorías actuales u horarios conflictivos.
+c.	Análisis documental: revisión de reglamento de tutorías de la universidad ESPE, y revisión de sistemas existentes como:
+1.	Sistema Informático para la Gestión del Programa de Tutorías de Acompañamiento Integral a Estudiantes (TAIE) en la Universidad Católica de Córdoba (Argentina). https://pa.bibdigital.ucc.edu.ar/4215/1/TF_Ghilino_Villareal.pdf
+2.	Sistema de Gestión de Tutorías Académicas para el CECIBEB de la Universidad Nacional de Educación a Distancia (España).  https://tesla.puertomaderoeditorial.com.ar/index.php/tesla/article/download/2/5
+3.	Diseño de un Sistema de Gestión de la Información para Tutorías de la  Universidad Autónoma del Estado de Morelos (México).  https://www.gridmorelos.uaem.mx/~mcruz/CICOS2009/articulos/p4%20%20Dise%C3%B1o%20de%20un%20Sistema%20de%20Gesti%C3%B3n%20de%20la%20Informaci%C3%B3n.pdf
+d.	Técnicas creativas: 
+-	Lluvia de ideas: entre los integrantes del grupo
+-	Mapeo mental: problema central sistema de tutorías ineficiente
+-	Técnica de escenarios: Simulacros de uso diario para identificar necesidades reales.
+6.5 Apéndice E Evidencia de entrevistas
+	E.1 Entrevista Estudiantes con buen rendimiento (potencial tutor)
+  
+E.2 Estudiantes con dificultades académicas (potenciales tutorados)
+  
+E.3 Profesores (potenciales supervisores o tutores)
+Gráfico 1
+ 
+Gráfico 2
+ 
+Gráfico 3
+ 
+Gráfico 4
+ 
+E.4 Drive con modelos de entrevistas usado y videos
+●	https://drive.google.com/drive/folders/1PXgpsHAHLPMDswq1fi2QzpSTSiHPjavs?usp=sharing
+

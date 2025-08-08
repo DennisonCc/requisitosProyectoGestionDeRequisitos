@@ -1,0 +1,455 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{amsm\begin{itemize}[it\begin{itemize}[itemsep=0.3em]
+    \item Requiere aprender GitHub si no se conoce
+    \item Menos funciones específicas de requisitos formales que herramientas especializadas
+    \item Necesita conexión a internet
+\end{itemize}=0.3em]
+    \item Costo: $0 - Completamente gratuito
+    \item Aprendizaje: Herramienta estándar en la industria
+    \item Portfolio: Los proyectos quedan en GitHub como portafolio
+    \item Colaboración: Fácil trabajo en equipo
+    \item Documentación: Excelente soporte y tutoriales
+    \item Escalabilidad: Puede usarse en proyectos futuros
+\end{itemize}% Configuración de página
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{headercolor}{\textbf{PGR - TutoESPEcialistas}}}
+\fancyhead[R]{\textcolor{headercolor}{\textbf{Grupo 4}}}
+\fancyfoot[C]{\textcolor{gray}{\thepage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{headercolor}\leaders\hrule height \headrulewidth\hfill}}
+
+% Configuración de títulos
+\titleformat{\section}{\Large\bfseries\color{headercolor}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{darkblue}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{darkblue}}{\thesubsubsection}{1em}{}
+
+% Colores personalizados
+\definecolor{headercolor}{RGB}{51, 102, 153}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+\definecolor{darkblue}{RGB}{25, 51, 102}
+\definecolor{lightblue}{RGB}{173, 216, 230}
+\definecolor{successgreen}{RGB}{40, 167, 69}
+\definecolor{warningorange}{RGB}{255, 193, 7}
+\definecolor{dangerred}{RGB}{220, 53, 69}
+
+% Configuración de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=headercolor,
+    citecolor=darkblue
+}
+
+% Configuración de listas
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+\title{
+    \vspace{-1cm}
+    \begin{tcolorbox}[colback=lightblue!20, colframe=headercolor, rounded corners, boxrule=2pt]
+        \centering
+        \textbf{\LARGE Plan de Gestión de Requisitos}\\[0.5em]
+        \textbf{\Large Sistema TutoESPEcialistas}\\[0.3em]
+        \textcolor{headercolor}{\large\textbf{Herramientas de Soporte}}
+    \end{tcolorbox}
+}
+
+\author{
+    \begin{tcolorbox}[colback=white, colframe=headercolor, rounded corners, boxrule=1pt, width=0.8\textwidth]
+        \centering
+        \textbf{Grupo 4 - NRC: 23284}\\[0.3em]
+        \begin{tabular}{c}
+            \faUser\ Chalacan Dennison \\
+            \faUser\ Sandoval Fernando \\
+            \faUser\ Grijalva Judá
+        \end{tabular}\\[0.3em]
+        \textcolor{gray}{\textbf{Ingeniería en Requisitos}}\\
+        \textcolor{gray}{\small Ing. Carlos Andrés Pillajo Bolagay}
+    \end{tcolorbox}
+}
+
+\date{
+    \begin{tcolorbox}[colback=headercolor!10, colframe=headercolor, rounded corners, boxrule=1pt, width=0.5\textwidth]
+        \centering
+        \faCalendar\ \textbf{Agosto 2025}
+    \end{tcolorbox}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\section{\faTools\ Herramientas de Soporte}
+
+\begin{tcolorbox}[colback=lightblue!10, colframe=headercolor, rounded corners, title=\faBullseye\ Objetivo]
+Seleccionar una herramienta gratuita y efectiva para gestionar los requisitos del proyecto TutoESPEcialistas, considerando las limitaciones económicas de un proyecto académico. La herramienta debe permitir documentar, rastrear, priorizar y gestionar cambios en los requisitos funcionales y no funcionales del sistema, facilitando la colaboración entre los miembros del equipo y manteniendo la trazabilidad durante todo el ciclo de vida del proyecto.
+\end{tcolorbox}
+
+\subsection{\faInfo\ Contexto del Análisis}
+
+\begin{tcolorbox}[colback=white, colframe=darkblue, rounded corners, boxrule=1pt]
+\textbf{Problemática}: Los proyectos académicos enfrentan restricciones presupuestarias que limitan el acceso a herramientas comerciales especializadas. Sin embargo, la gestión efectiva de requisitos es fundamental para el éxito del proyecto TutoESPEcialistas, que maneja 18 requisitos (10 funcionales y 8 no funcionales) con múltiples interdependencias y diferentes niveles de prioridad.
+
+\textbf{Necesidades específicas}:
+\begin{itemize}[itemsep=0.2em]
+    \item Gestión de atributos: ID, versión, autor, fuente, estabilidad, riesgo, prioridad
+    \item Control de cambios y versionado
+    \item Matriz de trazabilidad entre requisitos
+    \item Colaboración efectiva entre 3 miembros del equipo
+    \item Integración con el desarrollo futuro del sistema
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{\faBalanceScale\ Criterios de Evaluación}
+
+Se priorizaron herramientas completamente gratuitas, estableciendo una metodología de evaluación ponderada:
+
+\begin{tcolorbox}[colback=white, colframe=headercolor, rounded corners, boxrule=1pt]
+\begin{itemize}[itemsep=0.4em]
+    \item \textcolor{successgreen}{\faDollarSign} \textbf{Costo (30\%)}: Prioridad absoluta a herramientas gratuitas. Se penalizó cualquier limitación en planes gratuitos que afecte la funcionalidad requerida para el proyecto.
+    
+    \item \textcolor{headercolor}{\faCogs} \textbf{Funcionalidad (25\%)}: Evaluación de capacidades específicas: gestión de estados, trazabilidad, versionado, campos personalizados, automatización y reportes.
+    
+    \item \textcolor{warningorange}{\faSmile} \textbf{Facilidad de Uso (20\%)}: Curva de aprendizaje, interfaz intuitiva y documentación disponible. Crucial para equipos académicos con tiempo limitado.
+    
+    \item \textcolor{darkblue}{\faUsers} \textbf{Colaboración (15\%)}: Capacidades de trabajo en equipo: comentarios, notificaciones, asignaciones, y trabajo simultáneo.
+    
+    \item \textcolor{gray}{\faPlug} \textbf{Integración (10\%)}: Compatibilidad con herramientas de desarrollo, exportación de datos, y APIs disponibles.
+\end{itemize}
+\end{tcolorbox}
+
+\textbf{Metodología de puntuación}: Cada criterio se evaluó en escala 1-10, aplicando los pesos correspondientes para obtener una puntuación final ponderada.
+
+\subsection{Comparación de Herramientas}
+
+\begin{table}[H]
+\centering
+\caption{Evaluación Comparativa de Herramientas de Gestión de Requisitos}
+\begin{tabular}{|p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Herramienta} & \textbf{\color{white}GitHub Projects} & \textbf{\color{white}Trello} & \textbf{\color{white}ClickUp} & \textbf{\color{white}Jira} \\
+\hline
+\textbf{Costo (30\%)} & 
+10 - 100\% gratuito sin límites & 
+9 - Gratuito con límites menores & 
+6 - Plan gratuito muy limitado & 
+3 - Caro para estudiantes \\
+\hline
+\textbf{Funcionalidad (25\%)} & 
+8 - Gestión completa, Kanban + tabla & 
+6 - Básico pero efectivo & 
+9 - Muy completo, muchas vistas & 
+8 - Robusto y profesional \\
+\hline
+\textbf{Facilidad (20\%)} & 
+9 - Interfaz familiar, GitHub conocido & 
+10 - Muy intuitivo, aprendizaje rápido & 
+6 - Curva de aprendizaje & 
+5 - Complejo, requiere tiempo \\
+\hline
+\textbf{Colaboración (15\%)} & 
+9 - Excelente para equipos desarrollo & 
+8 - Buena colaboración, comentarios & 
+8 - Colaboración completa & 
+9 - Muy buena, notificaciones \\
+\hline
+\textbf{Integración (10\%)} & 
+10 - Ecosistema GitHub nativo & 
+7 - Integraciones básicas & 
+8 - Muchas integraciones & 
+8 - Buenas integraciones \\
+\hline
+\hline
+\rowcolor{successgreen!30}
+\textbf{Puntuación Final} & 
+8.9/10 - SELECCIONADA & 
+7.5/10 & 
+7.1/10 & 
+5.8/10 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{tcolorbox}[colback=successgreen!10, colframe=successgreen, rounded corners, title=\textbf{\faCheck\ Resultado del Análisis Comparativo}]
+\textbf{GitHub Projects obtiene la mayor puntuación (8.9/10)} principalmente por:
+
+\begin{itemize}[itemsep=0.4em]
+    \item \textbf{\faDollarSign\ Factor Económico Decisivo}: Como estudiantes, el costo es el factor más crítico. GitHub Projects es completamente gratuito sin limitaciones funcionales, mientras que ClickUp y Jira tienen planes gratuitos muy restrictivos.
+    
+    \item \textbf{\faCodeBranch\ Integración Natural}: Al tratarse de un proyecto de software, la integración nativa con el ecosistema de desarrollo (Git, Issues, Pull Requests) elimina la fricción entre gestión de requisitos y desarrollo.
+    
+    \item \textbf{\faUniversity\ Contexto Académico}: GitHub es ampliamente utilizado en universidades, por lo que el equipo ya está familiarizado con la plataforma, reduciendo el tiempo de aprendizaje.
+    
+    \item \textbf{\faInfinity\ Escalabilidad}: Sin límites de usuarios, proyectos o funcionalidades, permitiendo que el proyecto crezca sin restricciones económicas.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{\faCrown\ Justificación Detallada de la Selección: GitHub Projects}
+
+\begin{tcolorbox}[colback=successgreen!10, colframe=successgreen, rounded corners, title=\faCheckCircle\ Análisis de la Decisión]
+
+\textbf{\faBalanceScale\ ¿Por qué GitHub Projects y no las otras herramientas?}
+
+\begin{enumerate}[itemsep=0.5em]
+    \item \textbf{\faDollarSign\ Análisis Económico (Factor Crítico)}:
+    \begin{itemize}[itemsep=0.2em]
+        \item \textcolor{successgreen}{\textbf{GitHub Projects}}: 100\% gratuito, sin restricciones de usuarios, proyectos o funcionalidades
+        \item \textcolor{warningorange}{\textbf{ClickUp}}: Plan gratuito limitado a 100MB storage, 5 espacios, funcionalidades básicas
+        \item \textcolor{red}{\textbf{Jira}}: \$7.75/usuario/mes (prohibitivo para estudiantes)
+        \item \textcolor{warningorange}{\textbf{Notion}}: Límite de 1000 bloques en plan gratuito (insuficiente para proyectos grandes)
+    \end{itemize}
+    
+    \item \textbf{\faCodeBranch\ Ventaja de Integración (Factor Técnico)}:
+    \begin{itemize}[itemsep=0.2em]
+        \item \textbf{Trazabilidad Directa}: Los requisitos se conectan automáticamente con Issues, Pull Requests y commits
+        \item \textbf{Flujo de Trabajo Unificado}: No hay necesidad de cambiar entre plataformas
+        \item \textbf{Versionado Nativo}: Control de versiones integrado para requisitos y documentación
+        \item \textbf{Automatización}: GitHub Actions puede automatizar actualizaciones de estado
+    \end{itemize}
+    
+    \item \textbf{\faUniversity\ Contexto Académico (Factor Práctico)}:
+    \begin{itemize}[itemsep=0.2em]
+        \item \textbf{Curva de Aprendizaje Mínima}: El equipo ya conoce GitHub
+        \item \textbf{Portafolio Profesional}: Los proyectos quedan documentados para empleadores
+        \item \textbf{Colaboración Académica}: Ideal para trabajos en equipo universitarios
+        \item \textbf{Acceso Público}: Facilita la revisión por parte de profesores
+    \end{itemize}
+    
+    \item \textbf{\faRocket\ Capacidades Específicas para Gestión de Requisitos}:
+    \begin{itemize}[itemsep=0.2em]
+        \item \textbf{Issues como Requisitos}: Cada requisito es un Issue con estado, prioridad y asignación
+        \item \textbf{Etiquetas Personalizadas}: Clasificación por tipo, prioridad, módulo, etc.
+        \item \textbf{Milestones}: Agrupación de requisitos por iteraciones o entregas
+        \item \textbf{Tableros Kanban}: Visualización del estado de cada requisito
+        \item \textbf{Vista de Tabla}: Gestión tabular con filtros y ordenamiento
+    \end{itemize}
+\end{enumerate}
+\end{tcolorbox}
+
+\textbf{\faLightbulb\ Comparación Específica con Alternativas}:
+
+\begin{itemize}[itemsep=0.4em]
+    \item \textcolor{warningorange}{\textbf{vs. Trello}}: Aunque Trello es más fácil de usar, carece de funcionalidades avanzadas como campos personalizados, automatización y integración con desarrollo. GitHub Projects ofrece mayor funcionalidad manteniendo simplicidad.
+    
+    \item \textcolor{warningorange}{\textbf{vs. ClickUp}}: ClickUp es más completo funcionalmente, pero su plan gratuito es muy restrictivo y tiene una curva de aprendizaje pronunciada. Para un proyecto académico, la complejidad adicional no justifica las limitaciones del plan gratuito.
+    
+    \item \textcolor{red}{\textbf{vs. Jira}}: Jira es el estándar de la industria, pero su costo y complejidad lo hacen inadecuado para el contexto académico. Su configuración inicial también requiere conocimientos especializados.
+    
+    \item \textcolor{warningorange}{\textbf{vs. Notion}}: Notion es muy flexible, pero el límite de 1000 bloques en el plan gratuito es insuficiente para documentar requisitos detallados. Además, carece de funcionalidades específicas para gestión de proyectos de software.
+\end{itemize}
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection{\faCogs\ Funcionalidades Clave para el PGR}
+
+\begin{tcolorbox}[colback=white, colframe=headercolor, rounded corners, boxrule=1pt]
+
+\textbf{\faTag\ Gestión de Estados:}
+\begin{itemize}[itemsep=0.2em]
+    \item Labels personalizables: \texttt{"identificado"}, \texttt{"en-análisis"}, \texttt{"aprobado"}, \texttt{"implementado"}
+    \item Project boards con columnas por estado
+    \item \textcolor{headercolor}{\faRobot} Automatización con GitHub Actions
+\end{itemize}
+
+\textbf{\faProjectDiagram\ Trazabilidad:}
+\begin{itemize}[itemsep=0.2em]
+    \item Referencias entre issues mediante \texttt{\#número}
+    \item Vinculación con commits y pull requests
+    \item \textcolor{headercolor}{\faBullseye} Milestones para agrupación de requisitos
+\end{itemize}
+
+\textbf{\faCodeBranch\ Versionado:}
+\begin{itemize}[itemsep=0.2em]
+    \item Historial completo de cambios en cada issue
+    \item Integración nativa con Git
+    \item \textcolor{headercolor}{\faClock} Timeline de actividades
+\end{itemize}
+
+\textbf{\faStar\ Priorización:}
+\begin{itemize}[itemsep=0.2em]
+    \item Labels de prioridad: \texttt{"prioridad-alta"}, \texttt{"prioridad-media"}, \texttt{"prioridad-baja"}
+    \item Filtros avanzados
+    \item \textcolor{headercolor}{\faSort} Ordenamiento manual en boards
+\end{itemize}
+
+\end{tcolorbox}
+
+\subsection{\faWrench\ Configuración Específica para TutoESPEcialistas}
+
+\subsubsection{\faFolder\ Estructura del Proyecto Optimizada}
+
+\begin{tcolorbox}[colback=lightblue!10, colframe=headercolor, rounded corners, boxrule=1pt]
+\textbf{\faRocket\ Configuración del Repositorio}:
+\begin{itemize}[itemsep=0.4em]
+    \item \textcolor{headercolor}{\faCodeBranch} \textbf{Repositorio}: "TutoESPEcialistas-ESPE" (público para revisión académica)
+    \item \textcolor{darkblue}{\faProjectDiagram} \textbf{Project Board}: "Gestión de Requisitos PGR"
+    \item \textcolor{successgreen}{\faShieldAlt} \textbf{Branch Protection}: Main branch protegida, requiere PR review
+    \item \textcolor{warningorange}{\faUsers} \textbf{Colaboradores}: Equipo académico + profesor como revisor
+\end{itemize}
+
+\textbf{\faBullseye\ Milestones Académicos Alineados}:
+\begin{itemize}[itemsep=0.3em]
+    \item \textbf{Sprint 1 - Análisis} \faSearch: Levantamiento y documentación de requisitos (Semanas 1-3)
+    \item \textbf{Sprint 2 - Diseño} \faDraftingCompass: Arquitectura y diseño del sistema (Semanas 4-6)
+    \item \textbf{Sprint 3 - MVP} \faCode: Implementación funcionalidades core (Semanas 7-10)
+    \item \textbf{Sprint 4 - Completitud} \faCheckCircle: Features avanzadas y testing (Semanas 11-14)
+    \item \textbf{Entrega Final} \faTrophy: Documentación final y presentación (Semana 15)
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection{Sistema de Etiquetado}
+
+\begin{table}[H]
+\centering
+\caption{Sistema de Labels para TutoESPEcialistas}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{4cm}|p{4cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Categoría} & 
+\textbf{\color{white}Label} & 
+\textbf{\color{white}Descripción} & 
+\textbf{\color{white}Ejemplo de Uso} \\
+\hline
+\textbf{Tipo} & req-funcional & Funcionalidades del sistema & RF001: Login de usuarios \\
+\hline
+\textbf{Tipo} & req-no-funcional & Restricciones y calidad & RNF001: Tiempo respuesta menor a 2s \\
+\hline
+\textbf{Prioridad} & prioridad-critica & Esencial para MVP & Autenticación, Búsqueda tutores \\
+\hline
+\textbf{Prioridad} & prioridad-alta & Importante para v1.0 & Pagos, Calificaciones \\
+\hline
+\textbf{Prioridad} & prioridad-media & Deseable para v2.0 & Chat avanzado, Estadísticas \\
+\hline
+\textbf{Estado} & identificado & Requisito documentado & Issue creado, pendiente análisis \\
+\hline
+\textbf{Estado} & en-analisis & En proceso de refinamiento & Discusión activa en comments \\
+\hline
+\textbf{Estado} & aprobado & Validado por stakeholders & Listo para implementación \\
+\hline
+\textbf{Estado} & implementado & Código desarrollado & PR cerrado, feature completada \\
+\hline
+\textbf{Módulo} & modulo-auth & Autenticación y autorización & Login, registro, permisos \\
+\hline
+\textbf{Módulo} & modulo-tutorias & Core del negocio & Búsqueda, reserva, gestión \\
+\hline
+\textbf{Módulo} & modulo-pagos & Sistema de pagos & Integración, transacciones \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Configuración Inicial del Proyecto}
+
+\begin{table}[H]
+\centering
+\caption{Plan de Configuración de GitHub Projects}
+\begin{tabular}{|p{3cm}|p{4.5cm}|p{4.5cm}|p{3cm}|}
+\hline
+\rowcolor{headercolor!30}
+\textbf{\color{white}Fase} & \textbf{\color{white}Actividades} & \textbf{\color{white}Configuración} & \textbf{\color{white}Tiempo} \\
+\hline
+\textbf{Setup Inicial} & 
+Crear repositorio, Habilitar Issues, Crear Project Board, Configurar templates & 
+Repository Settings, Features, Projects, Issue templates & 
+2-3 horas \\
+\hline
+\textbf{Sistema Etiquetas} & 
+Labels por tipo, prioridad, estado, módulo & 
+tipo: funcional/no-funcional, prioridad: alta/media/baja, estado: identificado/aprobado & 
+1 hora \\
+\hline
+\textbf{Milestones} & 
+Iteración 1: MVP, Iteración 2: Core, Iteración 3: Avanzado & 
+Fechas de entrega, Objetivos por iteración, Criterios de aceptación & 
+1-2 horas \\
+\hline
+\textbf{Automatización} & 
+GitHub Actions, Auto-labels, Estado sync & 
+Workflows para Issue auto-labeling, Project board updates & 
+3-4 horas \\
+\hline
+\textbf{Configuración Equipo} & 
+Roles y permisos, Templates, Guidelines & 
+Admin/Maintainer/Write, Templates estándar, CONTRIBUTING.md & 
+1-2 horas \\
+\hline
+\hline
+\rowcolor{successgreen!30}
+\textbf{Total} & \multicolumn{2}{|p{9cm}|}{Configuración completa lista para uso} & 8-12 horas \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{\faLightbulb\ Ejemplo Práctico}
+
+\begin{tcolorbox}[colback=warningorange!10, colframe=warningorange, rounded corners, title=\faClipboardList\ Crear RF02 - Solicitud de tutorías]
+\begin{enumerate}[itemsep=0.3em]
+    \item Crear issue usando template
+    \item Aplicar labels: req-funcional, prioridad-alta, modulo-tutorias
+    \item Vincular con RF01 usando \#1
+    \item Asignar a milestone "v1.0 Análisis"
+    \item Mover a columna "En Análisis" en project board
+\end{enumerate}
+\end{tcolorbox}
+
+\subsection{\faThumbsUp\ Ventajas para Estudiantes}
+
+\begin{tcolorbox}[colback=successgreen!10, colframe=successgreen, rounded corners, boxrule=1pt]
+\begin{itemize}[itemsep=0.3em]
+    \item \textcolor{successgreen}{\faDollarSign} \textbf{Costo}: \$0 - Completamente gratuito
+    \item \textcolor{headercolor}{\faGraduationCap} \textbf{Aprendizaje}: Herramienta estándar en la industria
+    \item \textcolor{darkblue}{\faBriefcase} \textbf{Portfolio}: Los proyectos quedan en GitHub como portafolio
+    \item \textcolor{warningorange}{\faUsers} \textbf{Colaboración}: Fácil trabajo en equipo
+    \item \textcolor{gray}{\faBook} \textbf{Documentación}: Excelente soporte y tutoriales
+    \item \textcolor{successgreen}{\faExpand} \textbf{Escalabilidad}: Puede usarse en proyectos futuros
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{\faExclamationTriangle\ Limitaciones}
+
+\begin{tcolorbox}[colback=dangerred!10, colframe=dangerred, rounded corners, boxrule=1pt]
+\begin{itemize}[itemsep=0.3em]
+    \item \textcolor{dangerred}{\faLearning} Requiere aprender GitHub si no se conoce
+    \item \textcolor{warningorange}{\faTools} Menos funciones específicas de requisitos formales que herramientas especializadas
+    \item \textcolor{gray}{\faWifi} Necesita conexión a internet
+\end{itemize}
+\end{tcolorbox}
+
+\section{\faCheckCircle\ Conclusión}
+
+\begin{tcolorbox}[colback=lightblue!15, colframe=headercolor, rounded corners, boxrule=2pt, title=\faAward\ Decisión Final]
+GitHub Projects es la opción óptima para TutoESPEcialistas por ser \textbf{completamente gratuita}, ofrecer todas las funcionalidades necesarias para gestión de requisitos, y ser ampliamente utilizada en entornos académicos y profesionales. Su integración con el desarrollo de código la convierte en la herramienta ideal para proyectos de software estudiantiles.
+\end{tcolorbox}
+
+\section{\faBook\ Referencias Básicas}
+
+\begin{tcolorbox}[colback=gray!5, colframe=gray, rounded corners, boxrule=1pt]
+\begin{itemize}[itemsep=0.3em]
+    \item GitHub Projects Documentation: \href{https://docs.github.com/en/issues/planning-and-tracking-with-projects}{docs.github.com/en/issues/planning-and-tracking-with-projects}
+    \item IEEE 830-1998: Recommended Practice for Software Requirements Specifications
+\end{itemize}
+\end{tcolorbox}
+
+\end{document}
