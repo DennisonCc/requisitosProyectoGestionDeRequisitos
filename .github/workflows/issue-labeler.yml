@@ -1,0 +1,22 @@
+name: Issue Labeler
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label RF issues
+      if: contains(github.event.issue.title, 'RF')
+      run: |
+        gh issue edit ${{ github.event.issue.number }} --add-label "req-funcional"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Label RNF issues  
+      if: contains(github.event.issue.title, 'RNF')
+      run: |
+        gh issue edit ${{ github.event.issue.number }} --add-label "req-no-funcional"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
